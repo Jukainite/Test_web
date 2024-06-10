@@ -1,0 +1,28 @@
+{% extends "users/base.html" %}
+
+{% block title %} Sinh Trắc Học {% endblock %}
+
+{% block content %}
+
+<br>
+
+<h1>Sinh trắc học cho {{ username }}</h1>
+<br>
+
+<h1>Số lượt vip còn lại: {{ data }}</h1>
+
+<br>
+<br>
+{% if error %}
+    <p style="color:red">{{ error }}</p>
+{% endif %}
+
+<h5>Mời bạn upload ảnh vân tay!</h5>
+<form method="post" enctype="multipart/form-data">  
+    {% csrf_token %}  
+    {{ form.as_p }}  
+    <button type="submit">Upload</button>  
+</form>  
+
+
+{% endblock %}

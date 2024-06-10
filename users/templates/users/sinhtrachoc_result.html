@@ -1,0 +1,38 @@
+{% extends "users/base.html" %}
+
+{% block title %} Kết Quả Sinh Trắc Học {% endblock %}
+
+{% block content %}
+<style>
+    .result {
+        color: blue;
+        font-weight: bold;
+    }
+    .content {
+        font-weight: bold;
+    }
+</style>
+<h1>Kết Quả Sinh Trắc Học</h1>
+<br>
+<h2>Gói đã sử dụng :<span class="result"> {{status}}</h2>
+    <br>
+    <br>
+{% if img_obj %}   
+    <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">  
+{% endif %}  
+
+<h2>Thông tin sinh trắc học:</h2>
+
+<div class="jumbotron">
+    <h2>Hình dạng vân tay: <span class="result">{{ result }}</h2>
+    <p class="lead content">
+        {{ content|safe }}
+
+</div>
+<br>
+<div class="container">
+    <h3>Tiếp sử dụng sinh trắc học:</h3>
+   
+    <a href="{% url 'sinhtrachoc' %}" class="btn btn-primary">Sinh trắc học</a>
+</div>
+{% endblock %}

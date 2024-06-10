@@ -1,0 +1,56 @@
+{% extends "users/base.html" %}
+
+{% block title %} Thần Số Học {% endblock %}
+
+{% block content %}
+
+<style>
+    .result {
+        color: blue;
+        font-weight: bold;
+    }
+    .content {
+        font-weight: bold;
+    }
+</style>
+
+<h1>Kết quả Thần số học</h1>
+<br>
+<h2>Gói đã sử dụng :<span class="result"> {{status}}</h2>
+
+<div class="jumbotron">
+<h2>Số chủ đạo:<span class="result"> {{ so_chu_dao_result }}</h2>
+<p class="lead content">
+    {{ so_chu_dao_cotent|safe }}
+</p>
+</div>
+
+<br>
+<br>
+
+<div class="jumbotron">
+<h2>Số linh hồn:<span class="result"> {{ so_linh_hon_result }}</h2>
+<p class="lead content">
+    {{ so_linh_hon_content|safe }}
+</p>
+</div>
+
+<br>
+<br>
+
+<div class="jumbotron">
+<h2>Số sứ mệnh: <span class="result">{{ so_su_menh_result }}</h2>
+<p class="lead content">
+    {{ so_su_menh_cotent|safe }}.
+</p>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+    <h3>Tiếp sử dụng thần số học:</h3>
+   
+    <a href="{% url 'thansohoc' %}" class="btn btn-primary">Thần số học</a>
+</div>
+{% endblock %}

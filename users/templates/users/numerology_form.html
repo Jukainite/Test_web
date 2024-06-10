@@ -1,0 +1,15 @@
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <label for="ngay">Ngày sinh:</label>
+    <input type="number" name="ngay" id="ngay" min="1" max="31">
+    <label for="thang">Tháng sinh:</label>
+    <input type="number" name="thang" id="thang" min="1" max="12">
+    <label for="nam">Năm sinh:</label>
+    <input type="number" name="nam" id="nam" min="1900" max="2100">
+    <label for="ten">Họ và tên:</label>
+    <input type="text" name="ten" id="ten">
+    <button type="submit">Tính toán</button>
+</form>

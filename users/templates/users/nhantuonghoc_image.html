@@ -1,0 +1,30 @@
+{% extends "users/base.html" %}
+
+{% block title %} Nhân Tướng Học {% endblock %}
+
+{% block content %}
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+
+<h1>Nhân tướng học cho {{ username }}</h1>
+<br>
+<h1>Số lượt vip còn lại: {{ data }}</h1>
+<br>
+<h5>Mời bạn upload khuôn mặt của bạn!</h5>
+<form method="post" enctype="multipart/form-data">  
+    {% csrf_token %}  
+    {{ form.as_p }}  
+    <button type="submit">Upload</button>  
+</form>  
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    {% comment %} <h3>Sử dụng camera:</h3> {% endcomment %}
+    <h5>Thay đổi cách dự đoán</h5>
+    <a href="{% url 'introvideo' %}" class="btn btn-primary">Sử dụng camera</a>
+</div>
+{% endblock %}

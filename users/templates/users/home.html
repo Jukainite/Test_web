@@ -1,0 +1,41 @@
+{% extends "users/base.html" %}
+{% block title %} Home Page {% endblock title%}
+{% block content %}
+ 
+        <h1 class="display-4">Welcome {{user.username.title}}</h1>
+  
+    {% if user.is_authenticated %}
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Thần số học</h1>
+                <p>Số dùng thần số học VIP còn lại của bạn là: <span style="color: blue;">{{thansohoc}}</span></p>
+                <p>Thần số học là nghệ thuật dựa trên việc phân tích các số liên quan đến ngày, tháng và năm sinh của bạn để hiểu về vận mệnh và tính cách.</p>
+                <a href="{% url 'thansohoc' %}" class="btn btn-primary">Bắt đầu</a>
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Sinh trắc học</h1>
+                <p>Số dùng sinh trắc hoc VIP còn lại của bạn là: <span style="color: blue;">{{sinhtrachoc}}</span></p>
+                <p>Sinh trắc học vân tay là nghiên cứu về các đặc điểm vân tay để xác định tính cách và tương lai của một người.</p>
+                <a href="{% url 'sinhtrachoc' %}" class="btn btn-primary">Bắt đầu</a>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Nhân tướng học</h1>
+                <p>Số dùng nhân tướng học VIP còn lại của bạn là: <span style="color: blue;">{{nhantuonghoc}}</span></p>
+                <p>Nhân tướng học là nghiên cứu về các đặc điểm gương mặt để xác định tính cách và tương lai của một người.</p>
+                <a href="{% url 'nhantuonghocimage' %}" class="btn btn-primary">Sử dụng file hình ảnh</a>
+                <a href="{% url 'introvideo' %}" class="btn btn-primary">Sử dụng camera</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
